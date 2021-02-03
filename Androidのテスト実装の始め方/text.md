@@ -54,11 +54,34 @@ Androidのテストコードには、2種類のフォルダの保存先があり
 
 # Androidのテスト用ライブラリの有効化
 
+JUnit
+いわずとしれたJava用のユニットテストライブラリです。
+
+Mockito
+テスト時に各クラスをMock可するためのライブラリです。
+具体的には通信処理のように、テスト中に本番の動きをされたら困るコンポーネントの動きを差し替えるために使用します。
+
+Espresso
+Android用のUIテスト用のライブラリです。
+JUnitのテストコードの中で、Activityを起動したり、Viewを操作（クリックやスワイプなど）したり、表示内容を確認する機能があります。
+
+```
+// ローカルの単体テスト(JUnit 4)に必要
+testImplementation 'junit:junit:4.12'
+
+// 実機でのテストに必要
+androidTestImplementation 'com.android.support:support-annotations:24.0.0'
+androidTestImplementation 'com.android.support.test:runner:0.5'
+```
 
 # テスト項目
 
 
-#　テストコード実装
+# テストコード実装
 
-
-
+```
+@Test
+public void check_start_activity() {
+    /* ここにテストする内容を書く */
+}
+```
